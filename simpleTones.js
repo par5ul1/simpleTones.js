@@ -223,5 +223,6 @@ completeChord = (frequency, type, duration) => {
 	osc.frequency.value = frequency;
 	gn.connect(context.destination);
 	osc.start(0);
-	gn.gain.exponentialRampToValueAtTime(0.0001,context.currentTime + duration);
+	osc.stop(context.currentTime + duration);
+	//gn.gain.exponentialRampToValueAtTime(0.0001,context.currentTime + duration);
 }
