@@ -181,8 +181,6 @@ var chord = {
 //Primary function
 playTone = (frequency, type, duration) => {
 	
-	context = new AudioContext();
-	
 	if (type === undefined) {
 		type = "sine";
 	}
@@ -213,7 +211,7 @@ playTone = (frequency, type, duration) => {
 	}
 	g.connect(context.destination);
 	o.start(0);
-	g.gain.exponentialRampToValueAtTime(0.001,context.currentTime + duration);
+	o.stop(duration);
 }
 
 //This function helps complete chords and should not be used by itself
