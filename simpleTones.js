@@ -211,7 +211,7 @@ playTone = (frequency, type, duration) => {
 	}
 	g.connect(context.destination);
 	o.start(0);
-	o.stop(duration);
+	o.stop(context.currentTime + duration);
 }
 
 //This function helps complete chords and should not be used by itself
