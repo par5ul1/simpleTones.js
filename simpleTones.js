@@ -210,7 +210,7 @@ playTone = (frequency, type, duration) => {
 	}
 	g.connect(context.destination);
 	o.start(0);
-	g.gain.setTargetAtTime(0, context.currentTime, duration);
+	g.gain.exponentialRampToValueAtTime(0.0001,context.currentTime + duration);
 }
 
 //This function helps complete chords and should not be used by itself
@@ -224,10 +224,3 @@ completeChord = (frequency, type, duration) => {
 	osc.start(0);
 	gn.gain.exponentialRampToValueAtTime(0.0001,context.currentTime + duration);
 }
-
-
-
-
-
-
-
