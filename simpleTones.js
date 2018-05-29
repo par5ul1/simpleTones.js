@@ -210,7 +210,7 @@ playTone = (frequency, type, duration) => {
 	}
 	g.connect(context.destination);
 	o.start(0);
-	g.gain.exponentialRampToValueAtTime(0.0000000000000001,context.currentTime + duration);
+	g.gain.linearRampToValueAtTime(0,context.currentTime + duration);
 }
 
 //This function helps complete chords and should not be used by itself
